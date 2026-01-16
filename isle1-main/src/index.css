@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .task-card {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  input[type='text'],
+  input[type='date'],
+  select {
+    transition: all 0.2s ease;
+  }
+
+  input[type='text']:focus,
+  input[type='date']:focus,
+  select:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  button {
+    transition: all 0.2s ease;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  input[type='checkbox'] {
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  input[type='checkbox']:hover {
+    transform: scale(1.1);
+  }
+}
